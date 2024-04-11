@@ -1,10 +1,12 @@
 import Header from "./header";
+import MyInput from "./MyInput";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <Header text='tdfjgfdgdfgfd' />
+      <Header text='My input text' />
+      <MyInput />
+      
     </div>
   );
 }
