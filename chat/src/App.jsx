@@ -23,7 +23,7 @@ function App() {
       }
     };
 
-    setInterval(fetchData, 1000);
+    setInterval(fetchData, 950);
   }, []);
 
   return (
