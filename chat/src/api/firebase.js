@@ -25,5 +25,4 @@ export const app = initializeApp(firebaseConfig);
 
 //Firestore
 export const firestore = getFirestore(app);
-export const kidsCollection = collection(firestore, "kids");
 export const messagesCollection = collection(firestore, "messages");

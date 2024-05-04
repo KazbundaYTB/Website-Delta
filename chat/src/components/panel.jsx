@@ -26,12 +26,13 @@ export default function Panel({ arr, setArr }) {
     clearInputs();
   };
 
+
   return (
-    <div className="w-full h-full flex ">
+    <div className="w-full h-full flex">
       <div className="w-10/12 bg-red-300 flex flex-col">
         <input
           type="text"
-          placeholder="name"
+          placeholder="Jméno"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -40,7 +41,7 @@ export default function Panel({ arr, setArr }) {
         />
         <input
           type="text"
-          placeholder="message"
+          placeholder="Zpráva"
           value={message}
           onChange={(e) => {
             setMessage(e.target.value);
@@ -49,9 +50,10 @@ export default function Panel({ arr, setArr }) {
         />
       </div>
 
-      <button className="w-2/12 m-10 bg-blue-400" onClick={handleSend}>
-        Send
+      <button className="w-2/12 m-5 bg-blue-400 p-4 text-2xl" onClick={handleSend}>
+        Odeslat
       </button>
+
     </div>
   );
 }

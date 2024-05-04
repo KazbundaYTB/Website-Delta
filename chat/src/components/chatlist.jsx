@@ -11,7 +11,9 @@ export default function ChatList({ arr }) {
           message={item.message}
           time={item.time}
         />
+        
       ))}
+      
     </div>
   );
 }

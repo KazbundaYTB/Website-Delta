@@ -28,7 +28,11 @@ function App() {
 
   return (
     <div className="w-screen h-screen flex flex-col">
-      <div className="h-[80%] bg-slate-200">
+      <div className="h-[10%] bg-stale-200"> 
+        <h1 className="p-5 text-3xl text-center align-middle items-center ">Start chatting with other people!</h1>
+        
+      </div>
+      <div className="h-[70%] bg-slate-200">
         <ChatList arr={arr} />
       </div>
 
