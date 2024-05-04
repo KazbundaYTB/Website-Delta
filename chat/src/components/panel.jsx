@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { firestore, kidsCollection, messagesCollection } from "../api/firebase";
-import { addDoc, doc, setDoc, getDocs } from "firebase/firestore";
+import { messagesCollection } from "../api/firebase";
+import { addDoc } from "firebase/firestore";
 
 export default function Panel({ arr, setArr }) {
   const [name, setName] = useState("");
