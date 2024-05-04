@@ -1,5 +1,5 @@
-import ChatList from "./components/ChatList";
-import Panel from "./components/Panel";
+import ChatList from "./components/chatlist";
+import Panel from "./components/panel";
 import "./style.css";
 import { useEffect, useState } from "react";
 import { messagesCollection } from "./api/firebase";
@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("Fetching data...");
+        // console.log("Fetching data...");
         const snap = await getDocs(
           query(messagesCollection, orderBy("time", "asc"))
         );
