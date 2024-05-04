@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # api
-/src/api/firebase.js
+/chat/src/api/firebase.js
