@@ -1,0 +1,70 @@
+
+
+//MY DB LOGIN
+ const firebaseConfig = {
+   apiKey: "AIzaSyDYTmqPnuqG_k0vBA5UwDohXcHluQKlUl0",
+   authDomain: "chatappdb-5cad4.firebaseapp.com",
+   projectId: "chatappdb-5cad4",
+   storageBucket: "chatappdb-5cad4.appspot.com",
+   messagingSenderId: "1000459507260",
+   appId: "1:1000459507260:web:bcdfa1149d38dd701c5539",
+   measurementId: "G-WSGFSKNT19"
+ };
+
+
+
+ // APP.jsx
+
+ return (
+    <div className="w-screen h-screen flex flex-col">
+      <div className="h-[10%] bg-stale-200"> 
+        <h1 className="p-5 text-3xl text-center align-middle items-center ">React web chat</h1>
+        
+      </div>
+      <div className="h-[70%] bg-slate-200">
+        <ChatList arr={arr} />
+      </div>
+
+      <div className="h-[20%] bg-slate-300">
+        <Panel arr={arr} setArr={setArr} />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+// PANEl.jsx
+
+  return (
+    <div className="w-full h-full flex">
+      <div className="w-10/12 bg-red-300 flex flex-col">
+        <input
+          type="text"
+          placeholder="Jméno"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          className="p-4 text-2xl"
+        />
+        <input
+          type="text"
+          placeholder="Zpráva"
+          value={message}
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
+          className="p-4 text-2xl"
+        />
+      </div>
+
+      <button className="w-2/12 m-5 bg-blue-400 p-4 text-2xl" onClick={handleSend}>
+        Odeslat
+      </button>
+
+    </div>
+  );
+  

@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # api
-/chat/src/api/firebase.js
+/src/api/firebase.js
+/src/api/customisation-backup.txt
