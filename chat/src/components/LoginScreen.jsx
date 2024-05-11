@@ -30,16 +30,13 @@ export default function LoginScreen() {
   const handleLogin = async () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
         console.log(user);
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error(errorCode, errorMessage);
-        // ..
       });
 
     setEmail("");
@@ -49,9 +46,9 @@ export default function LoginScreen() {
   const handleGoogle = async () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        // const credential = GoogleAuthProvider.credentialFromResult(result);
-        // const token = credential.accessToken;
-        // const user = result.user;
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -63,10 +60,8 @@ export default function LoginScreen() {
   };
 
   return (
-        
-        
-    
     <div className="w-screen h-screen flex items-center  bg-slate-600 flex-col space-y-2.5 justify-center ">
+      <div className="text-center text-white text-xl ">Login to continue</div>
       <input
         type="email"
         placeholder="Email"
@@ -86,22 +81,18 @@ export default function LoginScreen() {
         className="p-4 text-2xl rounded-lg"
       />
 
-    <div className=" flex flex-row space-x-3.5">
-      <button onClick={handleCreate} className="p-4 bg-blue-400 text-2xl rounded-lg">
-        Create Account
-      </button>
-      <button onClick={handleLogin} className="p-4 bg-blue-400 text-2xl rounded-lg">
-        Login
-      </button>
+      <div className="flex flex-row space-x-3.5">
+        <button onClick={handleCreate} className="p-4 bg-blue-400 text-2xl rounded-lg">
+          Create Account
+        </button>
+        <button onClick={handleLogin} className="p-4 bg-blue-400 text-2xl rounded-lg">
+          Login
+        </button>
       </div>
       
-      <button onClick={handleGoogle} className="p-4 bg-blue-400 text-2xl rounded-lg ">
+      <button onClick={handleGoogle} className="p-4 bg-blue-400 text-2xl rounded-lg">
         Login with Google
       </button>
-    
-
-      </div>
-      
-    
+    </div>
   );
 }
