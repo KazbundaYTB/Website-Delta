@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { messagesCollection } from "../api/firebase";
-import { addDoc} from "firebase/firestore";
+import { addDoc } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import { auth } from "../api/firebase";
 
