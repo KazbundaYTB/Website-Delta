@@ -14,16 +14,13 @@ export default function LoginScreen() {
   const handleCreate = async () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
         console.log(user);
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error(errorCode, errorMessage);
-        // ..
       });
 
     setEmail("");
@@ -52,57 +49,59 @@ export default function LoginScreen() {
   const handleGoogle = async () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
+        // const credential = GoogleAuthProvider.credentialFromResult(result);
+        // const token = credential.accessToken;
+        // const user = result.user;
       })
       .catch((error) => {
-        // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
-        // The email of the user's account used.
         const email = error.customData.email;
-        // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
         console.error(errorCode, errorMessage, email, credential);
       });
   };
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+        
+        
+    
+    <div className="w-screen h-screen flex items-center  bg-slate-600 flex-col space-y-2.5 justify-center ">
       <input
         type="email"
-        placeholder="email"
+        placeholder="Email"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
         }}
-        className="p-4 text-2xl"
+        className="p-4 text-2xl rounded-lg"
       />
       <input
-        type="text"
-        placeholder="password"
+        type="password"
+        placeholder="Password"
         value={password}
         onChange={(e) => {
           setPassword(e.target.value);
         }}
-        className="p-4 text-2xl"
+        className="p-4 text-2xl rounded-lg"
       />
 
-      <button onClick={handleCreate} className="p-4 bg-blue-400 text-2xl">
-        Create acc
+    <div className=" flex flex-row space-x-3.5">
+      <button onClick={handleCreate} className="p-4 bg-blue-400 text-2xl rounded-lg">
+        Create Account
       </button>
-      <button onClick={handleLogin} className="p-4 bg-blue-400 text-2xl">
+      <button onClick={handleLogin} className="p-4 bg-blue-400 text-2xl rounded-lg">
         Login
       </button>
-      <button onClick={handleGoogle} className="p-4 bg-blue-400 text-2xl">
-        Google
+      </div>
+      
+      <button onClick={handleGoogle} className="p-4 bg-blue-400 text-2xl rounded-lg ">
+        Login with Google
       </button>
-    </div>
+    
+
+      </div>
+      
+    
   );
 }

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { firestore, kidsCollection, messagesCollection } from "../api/firebase";
-import { addDoc, doc, setDoc, getDocs } from "firebase/firestore";
+import { messagesCollection } from "../api/firebase";
+import { addDoc} from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import { auth } from "../api/firebase";
 
-export default function Panel({ arr, setArr, username }) {
+export default function Panel({ username }) {
   const [message, setMessage] = useState("");
 
   const clearInputs = () => {

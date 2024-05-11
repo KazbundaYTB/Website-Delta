@@ -13,7 +13,7 @@ export default function Message({ id, name, message, time }) {
       <p>{message}</p>
       <p className="text-sm text-blue-800">{time.toDate().toLocaleString()}</p>
       <button
-        className="bg-red-500 text-white p-2 rounded-xl"
+        className="bg-red-500 text-white p-1 rounded-xl"
         onClick={handleDelete}
       >
         delete
