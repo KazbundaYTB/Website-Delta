@@ -1,6 +1,7 @@
 import React from "react";
 import { deleteDoc, doc } from "firebase/firestore";
 import { messagesCollection } from "../api/firebase";
+import { FaTrash } from "react-icons/fa";
 
 export default function Message({ id, name, message, time }) {
   const handleDelete = async () => {
@@ -16,7 +17,7 @@ export default function Message({ id, name, message, time }) {
         className="bg-red-500 text-white p-1 rounded-xl"
         onClick={handleDelete}
       >
-        delete
+        <FaTrash style={{ fontSize: "0.8rem" }} /> {/* Zde nastavujeme velikost ikony */}
       </button>
     </div>
   );
