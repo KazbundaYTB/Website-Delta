@@ -61,7 +61,8 @@ export default function LoginScreen() {
 
   return (
     <div className="w-screen h-screen flex items-center  bg-slate-600 flex-col space-y-2.5 justify-center ">
-      <div className="text-center text-white text-xl ">Login to continue</div>
+      <div className="text-center text-white text-3xl ">Login to continue</div>
+      <br />
       <input
         type="email"
         placeholder="Email"
@@ -71,6 +72,7 @@ export default function LoginScreen() {
         }}
         className="p-4 text-2xl rounded-lg"
       />
+      
       <input
         type="password"
         placeholder="Password"

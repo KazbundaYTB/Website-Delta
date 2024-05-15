@@ -17,7 +17,7 @@ export default function Message({ id, name, message, time }) {
         className="bg-red-500 text-white p-1 rounded-xl"
         onClick={handleDelete}
       >
-        <FaTrash style={{ fontSize: "0.8rem" }} /> {/* Zde nastavujeme velikost ikony */}
+        <FaTrash style={{ fontSize: "0.8rem" }} /> 
       </button>
     </div>
   );
