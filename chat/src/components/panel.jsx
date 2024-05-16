@@ -12,7 +12,7 @@ export default function Panel({ username }) {
   };
 
   const handleSend = async () => {
-    if (!username || !message) return;
+    if (!username || !message) return alert(" You can't send empty message! ");
 
     try {
       const docRef = await addDoc(messagesCollection, {
@@ -21,9 +21,9 @@ export default function Panel({ username }) {
         time: new Date(),
       });
 
-      console.log("Document written with ID: ", docRef.id);
+      console.log("Message created with ID: ", docRef.id);
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error with creating message: ", e);
     }
 
     clearInputs();
@@ -35,7 +35,8 @@ export default function Panel({ username }) {
 
   return (
     <div className="w-full h-full flex ">
-      <div className="w-10/12 bg-red-300 flex flex-col">
+      <div className="w-11/12 bg-red-300 flex flex-col">
+
         <div className="flex items-center justify-between p-4">
           <p className="text-xl font-bold">{username}</p>
           <button
@@ -57,7 +58,7 @@ export default function Panel({ username }) {
       </div>
 
       <button
-        className="w-2/12 m-10 bg-blue-400 rounded-lg text-white py-2"
+        className="w-1/12 m-2 bg-blue-400 rounded-md text-white py-2"
         onClick={handleSend}
       >
         Send
