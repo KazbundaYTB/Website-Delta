@@ -95,6 +95,25 @@ export default function LoginScreen() {
       <button onClick={handleGoogle} className="p-4 bg-blue-400 text-2xl rounded-lg">
         Login with Google
       </button>
+        
+      <div className="p-4 text-xl rounded-lg flex items-center text-white bg-slate-600 flex-col space-y-5 justify-center ">
+
+      <h1>If you have problems logging in, please contact!</h1>
+
+
+      <div className=" flex flex-row space-x-5">
+      <button className="px-4 py-2 bg-blue-500 text-white rounded items-center"> 
+
+      <a href="http://localhost:3000/" className="justify-center">Discord</a> 
+
+      </button>
+      {/* <button className="px-4 py-2 bg-blue-500 text-white rounded items-center"> 
+
+<a href="http://localhost:3000/" className="justify-center">Discord</a> 
+
+</button> */}
+      </div>
+      </div>
     </div>
   );
 }
