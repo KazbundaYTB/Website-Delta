@@ -12,7 +12,7 @@ export default function Panel({ username }) {
   };
 
   const handleSend = async () => {
-    if (!username || !message) return alert(" You can't send empty message! ");
+    if (!username || !message) return alert(" You cannot send an empty message! ");
 
     try {
       const docRef = await addDoc(messagesCollection, {

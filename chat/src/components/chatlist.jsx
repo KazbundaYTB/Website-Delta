@@ -6,7 +6,7 @@ export default function ChatList({ arr }) {
     <div className="w-full h-full flex flex-col justify-end bg-green-100">
       <div className=" overflow-y-scroll">
       {arr.length === 0 ? (
-        <div className="text-center text-red-600 text-xl font-bold">SYSTÉM - Nebyly nalezeny žádné zprávy k načtení!</div>
+        <div className="text-center text-red-600 text-xl font-bold">SYSTÉM - No messages to load!</div>
       ) : (
         arr.map((item) => (
           <Message
