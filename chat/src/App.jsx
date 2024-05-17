@@ -1,6 +1,6 @@
 import ChatList from "./components/chatlist";
 import Panel from "./components/panel";
-
+import Maintenance from "./components/Maintenance"
 
 import "./style.css";
 import { useEffect, useState } from "react";
@@ -39,11 +39,18 @@ function App() {
       }
     });
   }, []);
+  
 
+
+  if (MaintenanceStatus) {
+    return <Maintenance />;
+  }
   
   if (!loggedIn) {
     return <LoginScreen />;
   }
+
+
 
 
   return (
