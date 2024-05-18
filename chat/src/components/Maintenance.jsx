@@ -14,7 +14,7 @@ export default function Maintenance({ setMaintenanceStatus, username }) {
         <div className="flex flex-row space-x-5">
           {username === "administrator@kazbunda.tk" && (
             <button className="px-4 py-2 bg-blue-500 text-white rounded items-center" onClick={maintenanceOff}>
-              Turn Off Maintenance
+              Continue with Maintenance bypass
             </button>
           )}
         </div>
