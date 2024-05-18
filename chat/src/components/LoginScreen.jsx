@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { auth } from "../api/firebase";
+import { sendPasswordResetEmail } from "firebase/auth";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
-export default function LoginScreen() {
+export default function LoginScreen(username) {
   const provider = new GoogleAuthProvider();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -95,6 +96,24 @@ export default function LoginScreen() {
       <button onClick={handleGoogle} className="p-4 bg-blue-400 text-2xl rounded-lg">
         Login with Google
       </button>
+      <button
+              className="px-4 py-2 bg-emerald-500 text-white rounded"
+              onClick={() =>{
+                sendPasswordResetEmail(auth, username)
+                  .then(() => {
+                    console.log("email sent")
+                    })
+                    .catch((error) => {
+                   const errorCode = error.code;
+                  const errorMessage = error.message;
+                  console.log(errorCode)
+                  console.log(errorMessage)
+               });
+  
+               }}>
+                
+                Password reset (Email)
+                </button>
         
       <div className="p-4 text-xl rounded-lg flex items-center text-white bg-slate-600 flex-col space-y-5 justify-center ">
 

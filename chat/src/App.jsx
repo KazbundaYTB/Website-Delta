@@ -74,7 +74,7 @@ function App() {
   }
 
   if (!loggedIn) {
-    return <LoginScreen />;
+    return <LoginScreen username={username}/>;
   }
 
   return (
