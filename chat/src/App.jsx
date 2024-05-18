@@ -9,15 +9,15 @@ import {  query, orderBy, onSnapshot,doc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import LoginScreen from "./components/LoginScreen";
 import { auth } from "./api/firebase";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [maintenanceStatus, setMaintenanceStatus] = useState(false); // Initially false
+  const [maintenanceStatus, setMaintenanceStatus] = useState(false);
   const [username, setUsername] = useState("");
   const [arr, setArr] = useState([]);
 
   useEffect(() => {
-    // Listen to maintenance status changes from Firestore
     const settingsDoc = doc(firestore, 'config', 'settings');
     const unsubscribe = onSnapshot(settingsDoc, (doc) => {
       if (doc.exists()) {
@@ -26,7 +26,7 @@ function App() {
       }
     });
 
-    return () => unsubscribe(); // Cleanup subscription on unmount
+    return () => unsubscribe();
   }, []);
 
   useEffect(() => {
@@ -37,11 +37,24 @@ function App() {
       querySnapshot.forEach((doc) => {
         msgs.push({ ...doc.data(), id: doc.id });
       });
+
       setArr(msgs);
+      const elem = document.getElementById('chat');
+      console.log(elem)
+      elem.scrollTop = elem.scrollHeight;
     });
 
-    return () => unsubscribe(); // Cleanup subscription on unmount
+    return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    
+      const elem = document.getElementById('chat');
+      console.log(elem)
+      if (!elem) return;
+      elem.scrollTop = elem.scrollHeight
+
+  }, [arr]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -55,23 +68,19 @@ function App() {
     });
   }, []);
 
-  const handleMaintenanceOff = () => {
-    // Define here the logic to turn off maintenance
-    // For example, update Firestore document with maintenance mode off
-  };
 
   if (maintenanceStatus) {
     return <Maintenance username={username} setMaintenanceStatus={setMaintenanceStatus} />;
   }
 
   if (!loggedIn) {
-    return <LoginScreen />; // Render a login component or message here
+    return <LoginScreen />;
   }
 
   return (
     <div className="w-screen h-screen flex flex-col">
       <div className="h-[80%] bg-slate-200">
-        <ChatList arr={arr} />
+        <ChatList arr={arr} username={username} />
       </div>
       <div className="h-[20%] bg-slate-300">
         <Panel arr={arr} setArr={setArr} username={username} />

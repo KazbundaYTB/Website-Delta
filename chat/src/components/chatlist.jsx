@@ -1,10 +1,10 @@
 import React from "react";
 import Message from "./message";
 
-export default function ChatList({ arr }) {
+export default function ChatList({ arr, username }) {
   return (
     <div className="w-full h-full flex flex-col justify-end bg-green-100">
-      <div className=" overflow-y-scroll">
+      <div className=" overflow-y-scroll" id="chat">
       {arr.length === 0 ? (
         <div className="text-center text-red-600 text-xl font-bold">SYSTEM - No messages to load!</div>
       ) : (
@@ -12,9 +12,10 @@ export default function ChatList({ arr }) {
           <Message
             id={item.id}
             key={item.id}
-            name={item.username}
+            email={item.username}
             message={item.message}
             time={item.time}
+            currentuser={username}
           />
         ))
       )}
