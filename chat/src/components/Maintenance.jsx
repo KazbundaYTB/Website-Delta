@@ -16,13 +16,13 @@ export default function Maintenance( maintenceSetter ) {
 
   return (
     <div className="w-screen h-screen flex items-center  bg-slate-600 flex-col space-y-2.5 justify-center ">
-      <div className="text-center text-white text-3xl ">Login to continue</div>
+      <div className="text-center text-white text-3xl ">Maintenance</div>
       <br />
 
         
       <div className="p-4 text-xl rounded-lg flex items-center text-white bg-slate-600 flex-col space-y-5 justify-center ">
 
-      <h1>If you have problems logging in, please contact!</h1>
+      <h1>This website is under maintenance! Check our discord for more info or try it again later!</h1>
 
 
       <div className=" flex flex-row space-x-5">
