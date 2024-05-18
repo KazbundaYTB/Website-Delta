@@ -5,14 +5,8 @@ export default function Maintenance( maintenceSetter ) {
   const [MaintenanceStatus] = useState(false);
   const maintenanceOn = () => { MaintenanceStatus(true)}
   const maintenanceOff = () => {MaintenanceStatus(false)}
-  const Maintenacesetter = useEffect(() => { 
-    if (maintenanceOn === true ) {
-      MaintenanceStatus(false)
-    } else if (maintenanceOn === false ) {
-      MaintenanceStatus(true)
-    }
-
-  });
+  const MaintenaceSetON = useEffect(() => { maintenanceOn});
+  const MaintenaceSetOff = useEffect(() => { maintenanceOff});
 
   return (
     <div className="w-screen h-screen flex items-center  bg-slate-600 flex-col space-y-2.5 justify-center ">
@@ -26,7 +20,7 @@ export default function Maintenance( maintenceSetter ) {
 
 
       <div className=" flex flex-row space-x-5">
-      <button className="px-4 py-2 bg-blue-500 text-white rounded items-center" onClick={Maintenacesetter}> 
+      <button className="px-4 py-2 bg-blue-500 text-white rounded items-center" onClick={MaintenaceSetOff}> 
       maintenceoff
       
 
