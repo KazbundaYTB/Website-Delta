@@ -26,9 +26,9 @@ export default function Maintenance( maintenceSetter ) {
 
 
       <div className=" flex flex-row space-x-5">
-      <button className="px-4 py-2 bg-blue-500 text-white rounded items-center"> 
-
-      <a href="http://localhost:3000/" className="justify-center">Discord</a> 
+      <button className="px-4 py-2 bg-blue-500 text-white rounded items-center" onClick={Maintenacesetter}> 
+      maintenceoff
+      
 
       </button>
 
