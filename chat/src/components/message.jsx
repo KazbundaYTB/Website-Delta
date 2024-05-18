@@ -9,19 +9,19 @@ export default function Message({ id, email, message, time, currentuser }) {
   };
 
   return (
-    <div className={`w-full flex ${email == currentuser && ""}`}>
+    <div className={`w-full flex ${email === currentuser && ""}`}>
     <div className="relative p-5 whitespace-nowrap text-3xl bg-slate-300 rounded-xl w-min m-3">
       <p className="text-sm text-blue-800">{email}</p>
       <p>{message}</p>
       <p className="text-sm text-blue-800">{time.toDate().toLocaleString()}</p>
-      {email == currentuser && (      
+      {email === currentuser && (      
       <button
         className="absolute bottom-2 right-2 bg-red-500 text-white p-1 rounded-xl"
         onClick={handleDelete}
       >
         <FaTrash style={{ fontSize: "0.8rem" }} />
       </button>)} 
-      {"administrator@kazbunda.tk" == currentuser && (      
+      {"administrator@kazbunda.tk" === currentuser && (      
       <button
         className="absolute bottom-2 right-2 bg-red-500 text-white p-1 rounded-xl"
         onClick={handleDelete}
