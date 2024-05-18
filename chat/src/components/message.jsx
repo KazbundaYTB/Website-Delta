@@ -16,14 +16,14 @@ export default function Message({ id, email, message, time, currentuser }) {
       <p className="text-sm text-blue-800">{time.toDate().toLocaleString()}</p>
       {email === currentuser && (      
       <button
-        className="absolute bottom-2 right-2 bg-red-500 text-white p-1 rounded-xl"
+        className="absolute bottom-2 right-2  text-red-400 p-1 rounded-xl"
         onClick={handleDelete}
       >
         <FaTrash style={{ fontSize: "0.8rem" }} />
       </button>)} 
       {"administrator@kazbunda.tk" === currentuser && (      
       <button
-        className="absolute bottom-2 right-2 bg-red-500 text-white p-1 rounded-xl"
+        className="absolute bottom-2 right-2  text-red-400 p-1 rounded-xl"
         onClick={handleDelete}
       >
         <FaTrash style={{ fontSize: "0.8rem" }} />
