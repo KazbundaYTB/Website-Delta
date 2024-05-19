@@ -9,7 +9,7 @@ import {  query, orderBy, onSnapshot,doc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import LoginScreen from "./components/LoginScreen";
 import { auth } from "./api/firebase";
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
