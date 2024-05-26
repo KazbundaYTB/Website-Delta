@@ -1,0 +1,16 @@
+ 
+ //| TODO LIST - v3.1 |\\
+
+ //ADDO
+ - Add maintenance indicator text.
+ - Add message content checker. (If message isn't starting with space " ")
+
+ // EDIT
+ - Edit alert message. -- DONE
+ - Edit message format.
+
+ //FIX
+ - Fix "scrollHeight" login screen error
+ - 
+ - 
+
