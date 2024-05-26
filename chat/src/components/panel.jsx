@@ -77,7 +77,7 @@ export default function Panel({ username, maintenanceStatus }) {
           console.log(errorCode)
           console.log(errorMessage)
        }
-      ); alert(`Your password reset email was sent to your inbox! (${username})`);
+      ); alert(`A password reset email has been sent to your inbox! (${username})`);
 
        }}>
         
