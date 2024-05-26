@@ -1,7 +1,7 @@
  
  //| TODO LIST - v3.1 |\\
 
- //ADDO
+ //ADD
  - Add maintenance indicator text.
  - Add message content checker. (If message isn't starting with space " ")
 
