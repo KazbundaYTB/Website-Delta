@@ -6,3 +6,5 @@
 
 - v2.0 (05/18 2024 ) - Added maintenance, Added scrollbar in chatlist + auto scroll, Changed login screen, Added password reset email. Fixed delete button.
 
+- v3.0 (05/26 2024 ) - Created new design.
+
