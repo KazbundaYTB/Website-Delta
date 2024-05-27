@@ -15,6 +15,7 @@ export default function Panel({ username, maintenanceStatus }) {
 
   const handleSend = async () => {
     if (!username || !message) return alert(" You cannot send an empty message! ");
+    if(message.startsWith(" ")) return alert(" You cannot send an empty message! ");
 
     try {
       const docRef = await addDoc(messagesCollection, {

@@ -10,10 +10,13 @@ export default function Message({ id, email, message, time, currentuser }) {
 
 return (
   <div className={`w-full flex ${email === currentuser && ""}`}>
-    <div className={`relative p-5 whitespace-nowrap text-3xl rounded-xl w-min m-3 ${email === currentuser ? "bg-neutral-300" : "bg-neutral-400"}`}>
-      <p className="text-sm text-blue-800">{email}</p>
+    <div className={`relative p-3 rounded-lg max-w-md m-3 text-xl ${email === currentuser ? "bg-emerald-300" : "bg-neutral-400"}`}>
+    <p className="text-sm text-blue-800">
+        {email} - {time.toDate().toLocaleString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}
+      </p>
+
       <p>{message}</p>
-      <p className="text-sm text-blue-800">{time.toDate().toLocaleString()}</p>
+      <p className="text-sm text-blue-800"></p>
       {email === currentuser && (      
       <button
         className="absolute bottom-2 right-2 text-red-400 p-1 rounded-xl"

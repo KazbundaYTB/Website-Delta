@@ -2,15 +2,13 @@
  //| TODO LIST - v3.1 |\\
 
  //ADD
- - Add maintenance indicator text.
- - Add message content checker. (If message isn't starting with space " ")
+ - Add message content checker. (If message isn't starting with space " ") -- DONE (27.5. 2024)
 
  // EDIT
- - Edit alert message. -- DONE
- - Edit message format.
+ - Edit alert message. -- DONE (26.5. 2024)
+ - Edit message format. -- DONE (27.5. 2024)
 
  //FIX
- - Fix "scrollHeight" login screen error
  - 
- - 
+
 

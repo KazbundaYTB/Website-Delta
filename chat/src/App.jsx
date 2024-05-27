@@ -47,14 +47,6 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    
-      const elem = document.getElementById('chat');
-      console.log(elem)
-      if (!elem) return;
-      elem.scrollTop = elem.scrollHeight
-
-  }, [arr]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -68,6 +60,14 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    
+    const elem = document.getElementById('chat');
+    console.log(elem)
+    if (!elem) return;
+    elem.scrollTop = elem.scrollHeight
+
+}, [arr]);
 
   if (maintenanceStatus) {
     return <Maintenance username={username} setMaintenanceStatus={setMaintenanceStatus} />;
@@ -77,6 +77,7 @@ function App() {
     return <LoginScreen username={username}/>;
   }
 
+  
   return (
     <div className="w-screen h-screen flex flex-col">
       <div className="h-[80%] bg-slate-200">
