@@ -8,3 +8,5 @@
 
 - v3.0 (05/26 2024 ) - Created new design.
 
+- v3.1 (05/27 2024 ) - Edited message design, changed time format, added empty message checker.
+
