@@ -10,3 +10,5 @@
 
 - v3.1 (05/27 2024 ) - Edited message design, changed time format, added empty message checker.
 
+- v3.2 (05/30 2024 ) - Edited message design, added sidebar, added text wrapping.
+
