@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { messagesCollection, firestore } from "../api/firebase";
-import { addDoc, doc, updateDoc } from "firebase/firestore";
+import { messagesCollection } from "../api/firebase";
+import { addDoc,} from "firebase/firestore";
 import { signOut,sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../api/firebase";
 import { BsFillSendFill } from "react-icons/bs";
@@ -36,19 +36,9 @@ export default function Panel({ username, maintenanceStatus }) {
     signOut(auth);
   };
 
-  const handleEnableMaintenance = async () => {
-    const settingsDoc = doc(firestore, 'config', 'settings');
-    await updateDoc(settingsDoc, {
-      maintenanceMode: true
-    });
-  };
 
-  const handleDisableMaintenance = async () => {
-    const settingsDoc = doc(firestore, 'config', 'settings');
-    await updateDoc(settingsDoc, {
-      maintenanceMode: false
-    });
-  };
+
+
 
 
   useEffect(() => {
@@ -60,7 +50,7 @@ export default function Panel({ username, maintenanceStatus }) {
     <div className="w-full h-full flex rounded-lg">
     <div className=" w-2/12">
 
-    <div className=" w-[100%] h-[100%] bg-gray-600 flex flex-col justify-center text-center space-y-2">
+    <div className=" w-[100%] h-[100%] bg-gray-700 flex flex-col justify-center text-center space-y-2">
     <p className="text-white font-bold text-l align-top"> Logged as: {username}</p>
     
     <div className="flex flex-row space-x-5 justify-center">
@@ -93,24 +83,6 @@ export default function Panel({ username, maintenanceStatus }) {
     </button>
     
     </div>
-
-    <div className="flex flex-row justify-center px-4 py-2 space-x-2">
-      {username === "administrator@kazbunda.tk" && (
-            <>
-              <button
-                className="bg-red-500 rounded-md text-white py-2 px-4"
-                onClick={handleEnableMaintenance}
-              >
-                        Enable Maintenance
-                </button>
-              <button
-                className="bg-green-500 rounded-md text-white py-2 px-4"
-                onClick={handleDisableMaintenance}
-              >
-                  Disable Maintenance
-              </button>
-              </>
-            )}</div>
         </div>
         </div>
 
