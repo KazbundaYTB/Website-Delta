@@ -28,10 +28,11 @@ export default function ChatList({ arr, username }) {
 
   <div className="w-2/12 bg-gray-600 flex-col">
     <br />
-    <div className="bg-slate-700 h-[35px] flex items-center justify-center"> <h1 className="text-white">ReactChat</h1> </div>
+    <div className="bg-slate-700 h-[35px] flex items-center justify-center"> <h1 className="text-white font-bold">ReactChat - v3.2 </h1> </div>
 
   <br />
-  <p className="text-white font-bold text-l align-top text-center "> Channels:</p>
+  <div className="w-full h-[1px] bg-slate-400"></div>
+  <p className="text-white font-bold text-l align-top text-center"> Channels:</p>
 
   {/* <div className="h-[45%] bg-gray-600 flex flex-col justify-start text-start space-x-5 "> */}
   <div className="h-[10%] bg-gray-600 flex flex-col justify-start text-start space-x-5 rounded-xl">
@@ -47,8 +48,10 @@ export default function ChatList({ arr, username }) {
 
 </div>
   </div> {/* CHANNELS DIV END */}
+  
   {username === "administrator@kazbunda.tk" && (
   <>
+  <div className="w-full h-[1px] bg-slate-400"></div>
   <p className="text-white font-bold text-l align-top text-center "> Administrators category:</p>
 
   <div className="flex flex-row justify-center px-4 py-2 space-x-2">
