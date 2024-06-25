@@ -11,6 +11,7 @@ export default function LoginScreen(username) {
   const provider = new GoogleAuthProvider();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState('');
 
   const handleCreate = async () => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -59,41 +60,47 @@ export default function LoginScreen(username) {
   };
 
   return (
-    <div className="w-screen h-screen flex items-center  bg-slate-600 flex-col space-y-2.5 justify-center ">
-      <div className="text-center text-white text-3xl ">Login to continue</div>
+    <div className="w-screen h-screen flex items-center  bg-neutral-900 flex-col space-y-2.5 justify-center ">
+      <div className="text-center text-white text-3xl font-bold">Login to continue</div>
       <br />
+      {error && <p className="text-red-500">{error}</p>}
+      <div className=" flex flex-col mt-3">
+      <span className=" text-white mb-4 ml-3 underline font-bold">Email or Username:</span>
+
       <input
         type="email"
-        placeholder="Email"
+        placeholder="username@provider.com"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
         }}
-        className="p-4 text-2xl rounded-lg"
+        className="px-16 py-3 rounded-lg"
       />
-      
+      <span className=" text-white mt-3 ml-3 justify-center items-center underline font-bold">Password:</span>
       <input
         type="password"
-        placeholder="Password"
+        placeholder="Password1234"
         value={password}
         onChange={(e) => {
           setPassword(e.target.value);
         }}
-        className="p-4 text-2xl rounded-lg"
+        className=" p-4 px-16 py-3 rounded-lg mt-3"
       />
-
-      <div className="flex flex-row space-x-3.5">
-        <button onClick={handleCreate} className="p-4 bg-blue-400 text-2xl rounded-lg">
+</div>
+<button onClick={handleCreate} className=" px-16 py-2 bg-green-600 text-white rounded">
           Create Account
         </button>
-        <button onClick={handleLogin} className="p-4 bg-blue-400 text-2xl rounded-lg">
+      <div className="flex ml-2 gap-2">
+
+        <button onClick={handleLogin} className=" px-16 py-2 bg-blue-600 text-white rounded">
           Login
         </button>
-      </div>
       
-      <button onClick={handleGoogle} className="p-4 bg-blue-400 text-2xl rounded-lg">
+      
+      <button onClick={handleGoogle} className="px-6 py-2 bg-blue-700 text-white rounded">
         Login with Google
       </button>
+      </div>
       <button
               className="px-4 py-2 bg-emerald-500 text-white rounded"
               onClick={() =>{
@@ -113,7 +120,7 @@ export default function LoginScreen(username) {
                 Password reset (Email)
                 </button>
         
-      <div className="p-4 text-xl rounded-lg flex items-center text-white bg-slate-600 flex-col space-y-5 justify-center ">
+      <div className="p-4 text-xl rounded-lg flex items-center text-white bg-neutral-900 flex-col space-y-5 justify-center ">
 
       <h1>If you have problems logging in, please contact!</h1>
 
@@ -124,11 +131,6 @@ export default function LoginScreen(username) {
       <a href="http://localhost:3000/" className="justify-center">Discord</a> 
 
       </button>
-      {/* <button className="px-4 py-2 bg-blue-500 text-white rounded items-center"> 
-
-<a href="http://localhost:3000/" className="justify-center">Discord</a> 
-
-</button> */}
       </div>
       </div>
     </div>
